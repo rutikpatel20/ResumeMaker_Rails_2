@@ -1,0 +1,67 @@
+<!-- PAGE STUFF -->
+<div class="block-relative page">
+  <div class="block-relative top-bar">
+    <div class="caps name">
+      <div class="abs-center"><%= @resume.name %></div>
+    </div>
+  </div>
+  <div class="side-bar">
+    <div class="mugshot">
+      <div class="logo">
+        <% if @resume.profile_pic? %>
+          <%# <img src="images/Rutik_Patel.jpg" alt=""> %>
+          <%= image_tag @resume.profile_pic.url,alt: "Image not available", class:"card-img img-resposive" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- ADDRESS -->
+    <p><%= @resume.address_line_1 %></p>
+    <p><%= @resume.address_line_2 %></p>
+    <p><%= @resume.address_line_3 %></p>
+    <p><%= @resume.email %></p>
+    <br>
+    <!-- SOCIAL PROFILE -->
+    <p class="block-relative social twitter"><%= @resume.social_media_1 %></p>
+    <p class="block-relative social github"><%= @resume.social_media_2 %></p>
+    <p class="block-relative social linked-in"><%= @resume.social_media_3 %></p>
+    <!-- EXPERTISE -->
+    <p class="block-relative caps side-header">Expertise</p>
+    <p class="block-relative list-thing"><%= @resume.expertise_1 %>L</p>
+    <p class="block-relative list-thing"><%= @resume.expertise_2 %></p>
+    <p class="block-relative list-thing"><%= @resume.expertise_3 %></p>
+    <p class="block-relative list-thing"><%= @resume.expertise_4 %></p>
+    <!-- EDUCATION  -->
+    <p class="block-relative caps side-header">Education</p>
+    <p class="block-relative list-thing light-text"><%= @resume.degree_1 %></p>
+    <p class="block-relative list-thing bold-text"><%= @resume.college_1 %></p>
+    <p class="block-relative list-thing light-text"><%= @resume.degree_2 %></p>
+    <p class="block-relative list-thing bold-text"><%= @resume.college_2 %></p>
+    <!-- HOBBIES -->
+    <p class="block-relative caps side-header">Hobbies</p>
+    <p class="block-relative list-thing"><%= @resume.hobby_1 %></p>
+    <p class="block-relative list-thing"><%= @resume.hobby_2 %></p>
+    <p class="block-relative list-thing"><%= @resume.hobby_3 %></p>
+  </div>
+  <div class="block-relative content-container">
+    <!-- CURRENT ROLE -->
+    <h2 class="block-relative caps title"><%= @resume.current_role %></h2>
+    <div class="block-relative separator"></div>
+    <!-- PROFILE  -->
+    <div class="block-relative caps greyed">Profile</div>
+    <p class="long-margin"> <%= @resume.profile_summary %></p>
+    <!-- EXPERIENCE -->
+    <div class="block-relative caps greyed">Experience</div>
+    <!-- JOB 1 -->
+    <h3><%= @resume.pr_job_title_1 %></h3>
+    <p class="light"><%= @resume.pr_job_role_1 %></p>
+    <p class="justified"><%= @resume.pr_job_description_1 %></p>
+    <!-- JOB 2 -->
+    <h3><%= @resume.pr_job_title_2 %></h3>
+    <p class="light"><%= @resume.pr_job_role_2 %></p>
+    <p class="justified"><%= @resume.pr_job_description_2 %></p>
+    <!-- JOB 3 -->
+    <h3><%= @resume.pr_job_title_3 %></h3>
+    <p class="light"><%= @resume.pr_job_role_3 %></p>
+    <p class="justified"><%= @resume.pr_job_description_3 %></p>
+  </div>
+</div>
