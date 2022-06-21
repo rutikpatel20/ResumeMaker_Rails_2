@@ -27,4 +27,8 @@ class Resume < ApplicationRecord
   # validates :pr_job_description_1, presence: true, length: {minimum: 40}
 
   mount_uploader :profile_pic, ProfilepictureUploader
+
+  has_many :expertises
+  accepts_nested_attributes_for :expertises, allow_destroy: true,
+                                             reject_if: proc { |att| att["expertise"].blank? }
 end

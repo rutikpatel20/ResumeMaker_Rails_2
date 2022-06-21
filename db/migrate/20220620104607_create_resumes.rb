@@ -11,10 +11,6 @@ class CreateResumes < ActiveRecord::Migration[6.1]
       t.string :social_media_1
       t.string :social_media_2
       t.string :social_media_3
-      t.string :expertise_1
-      t.string :expertise_2
-      t.string :expertise_3
-      t.string :expertise_4
       t.string :degree_1
       t.string :college_1
       t.string :degree_2

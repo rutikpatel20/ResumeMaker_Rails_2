@@ -26,10 +26,9 @@
     <p class="block-relative social linked-in"><%= @resume.social_media_3 %></p>
     <!-- EXPERTISE -->
     <p class="block-relative caps side-header">Expertise</p>
-    <p class="block-relative list-thing"><%= @resume.expertise_1 %>L</p>
-    <p class="block-relative list-thing"><%= @resume.expertise_2 %></p>
-    <p class="block-relative list-thing"><%= @resume.expertise_3 %></p>
-    <p class="block-relative list-thing"><%= @resume.expertise_4 %></p>
+    <% @expertises.each do |expertise| %>
+      <li><%= expertise.expertise %></li>
+    <% end %>
     <!-- EDUCATION  -->
     <p class="block-relative caps side-header">Education</p>
     <p class="block-relative list-thing light-text"><%= @resume.degree_1 %></p>
