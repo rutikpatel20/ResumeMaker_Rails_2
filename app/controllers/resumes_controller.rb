@@ -8,6 +8,8 @@ class ResumesController < ApplicationController
   def new
     @resume = Resume.new
     @expertises = @resume.expertises.build
+    @hobbies = @resume.hobbies.build
+    @educations = @resume.educations.build
   end
 
   def create
@@ -55,6 +57,6 @@ class ResumesController < ApplicationController
   end
 
   def resume_params
-    params.require(:resume).permit(:name, :profile_pic, :current_role, :address_line_1, :address_line_2, :address_line_3, :email, :social_media_1, :social_media_2, :social_media_3, :degree_1, :college_1, :degree_2, :college_2, :hobby_1, :hobby_2, :hobby_3, :profile_summary, :pr_job_title_1, :pr_job_role_1, :pr_job_description_1, :pr_job_title_2, :pr_job_role_2, :pr_job_description_2, :pr_job_title_3, :pr_job_role_3, :pr_job_description_3, expertises_attributes: [:id, :expertise])
+    params.require(:resume).permit(:name, :profile_pic, :current_role, :address_line_1, :address_line_2, :address_line_3, :email, :social_media_1, :social_media_2, :social_media_3, :degree_1, :college_1, :degree_2, :college_2, :hobby_1, :hobby_2, :hobby_3, :profile_summary, :pr_job_title_1, :pr_job_role_1, :pr_job_description_1, :pr_job_title_2, :pr_job_role_2, :pr_job_description_2, :pr_job_title_3, :pr_job_role_3, :pr_job_description_3, expertises_attributes: [:id, :expertise], hobbies_attributes: [:id, :hobby_name], educations_attributes: [:id, :degree_title, :study_organization_name])
   end
 end

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_21_122931) do
+ActiveRecord::Schema.define(version: 2022_06_21_132519) do
+
+  create_table "educations", force: :cascade do |t|
+    t.string "degree_title"
+    t.string "study_organization_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume_id"
+    t.index ["resume_id"], name: "index_educations_on_resume_id"
+  end
 
   create_table "expertises", force: :cascade do |t|
     t.string "expertise"
@@ -31,6 +40,14 @@ ActiveRecord::Schema.define(version: 2022_06_21_122931) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "hobbies", force: :cascade do |t|
+    t.string "hobby_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume_id"
+    t.index ["resume_id"], name: "index_hobbies_on_resume_id"
+  end
+
   create_table "resumes", force: :cascade do |t|
     t.string "name"
     t.string "profile_pic"
@@ -42,13 +59,6 @@ ActiveRecord::Schema.define(version: 2022_06_21_122931) do
     t.string "social_media_1"
     t.string "social_media_2"
     t.string "social_media_3"
-    t.string "degree_1"
-    t.string "college_1"
-    t.string "degree_2"
-    t.string "college_2"
-    t.string "hobby_1"
-    t.string "hobby_2"
-    t.string "hobby_3"
     t.string "profile_summary"
     t.string "pr_job_title_1"
     t.string "pr_job_role_1"

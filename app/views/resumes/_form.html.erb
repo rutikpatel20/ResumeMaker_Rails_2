@@ -69,89 +69,76 @@
         </div>
       </div>
       <!-- EDUCATION -->
-      <div class="form-group row">
-        <div class="form-group col-md-6">
-          <%= f.label :degree_1, "Degree 1 :" %>
-          <%= f.text_field :degree_1 ,placeholder: "Enter Your Degree #1",class:"mb-2 form-control" %>
-          <br>
-          <%= f.label :college_1, "College 1 :" %>
-          <%= f.text_field :college_1 ,placeholder: "Enter Your College Name",class:"mb-2 form-control" %>
-          <br>
+      <div class="form-group row mb-5">
+        <div class="form-group">
+          <div class="educations">
+            <%= f.label :educations, "Educations", class: "mt-3" %>
+            <%= f.fields_for :educations do |education| %>
+              <%= render 'education_fields', f: education %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Education"), f, :educations, data: {association_insertion_node: '.educations', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
         </div>
-        <div class="form-group col-md-6">
-          <%= f.label :degree_2, "Degree 2 :" %>
-          <%= f.text_field :degree_2 ,placeholder: "Enter Your Degree #2",class:"mb-2 form-control" %>
-          <br>
-          <%= f.label :college_2, "College 2 :" %>
-          <%= f.text_field :college_2 ,placeholder: "Enter Your College Name",class:"mb-2 form-control" %>
-          <br>
-        </div>
-        <!-- HOBBIES -->
-        <div class="form-group row">
-          <div class="form-group col-md-4">
-            <%= f.label :hobby_1, "Hobby 1 :" %>
-            <%= f.text_field :hobby_1 ,placeholder: "Enter Your Hobby #1",class:"mb-2 form-control" %>
-            <br>
-          </div>
-          <div class="form-group col-md-4">
-            <%= f.label :hobby_2, "Hobby 2 :" %>
-            <%= f.text_field :hobby_2 ,placeholder: "Enter Your Hobby #2",class:"mb-2 form-control" %>
-            <br>
-          </div>
-          <div class="form-group col-md-4">
-            <%= f.label :hobby_3, "Hobby 3 :" %>
-            <%= f.text_field :hobby_3 ,placeholder: "Enter Your Hobby #3",class:"mb-2 form-control" %>
-            <br>
-          </div>
-        </div>
-        <!-- PROFILE SUMMARY -->
-        <%= f.label :profile_summary, "Profile Summary :" %>
-        <%= f.text_area :profile_summary ,placeholder: "Enter Your Profile Summary",class:"mb-2 form-control",  rows: 5  %>
-        <br>
-        <!-- EXPERIENCE -->
-        <!-- JOB #1 -->
-        <div class="form-group row mt-3">
-          <div class="form-group col-md-4">
-            <%= f.label :pr_job_title_1, "Job Title 1 :" %>
-            <%= f.text_field :pr_job_title_1 ,placeholder: "Enter Your #1 Job Title",class:"mb-2 form-control" %>
-            <br>
-            <%= f.label :pr_job_role_1, "Job Role 1 :" %>
-            <%= f.text_field :pr_job_role_1 ,placeholder: "Enter Your #1 Job Role",class:"mb-2 form-control" %>
-            <br>
-            <%= f.label :pr_job_description_1, "Job Description 1 :" %>
-            <%= f.text_area :pr_job_description_1 ,placeholder: "Enter Your #1 Job Description",class:"mb-2 form-control",  rows: 5 %>
-            <br>
-          </div>
-          <!-- JOB #2 -->
-          <div class="form-group col-md-4">
-            <%= f.label :pr_job_title_2, "Job Title 2 :" %>
-            <%= f.text_field :pr_job_title_2 ,placeholder: "Enter Your #2 Job Title",class:"mb-2 form-control" %>
-            <br>
-            <%= f.label :pr_job_role_2, "Job Role 2 :" %>
-            <%= f.text_field :pr_job_role_2 ,placeholder: "Enter Your #2 Job Role",class:"mb-2 form-control" %>
-            <br>
-            <%= f.label :pr_job_description_2, "Job Description 2 :" %>
-            <%= f.text_area :pr_job_description_2 ,placeholder: "Enter Your #2 Job Description",class:"mb-2 form-control", rows: 5 %>
-            <br>
-          </div>
-          <!-- JOB #3 -->
-          <div class="form-group col-md-4">
-            <%= f.label :pr_job_title_3, "Job Title 3 :" %>
-            <%= f.text_field :pr_job_title_3 ,placeholder: "Enter Your #3 Job Title",class:"mb-2 form-control" %>
-            <br>
-            <%= f.label :pr_job_role_3, "Job Role 3 :" %>
-            <%= f.text_field :pr_job_role_3 ,placeholder: "Enter Your #3 Job Role",class:"mb-2 form-control" %>
-            <br>
-            <%= f.label :pr_job_description_3, "Job Description 3 :" %>
-            <%= f.text_area :pr_job_description_3 ,placeholder: "Enter Your #3 Job Description",class:"mb-2 form-control", rows: 5 %>
-            <br>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="form-group col-md-4">
-            <%= f.submit class:"btn-primary border-0 rounded-pill shadow p-3" %>
-          </div>
-        <% end %>
       </div>
+      <!-- HOBBIES -->
+      <div class="form-group row mb-5">
+        <div class="form-group">
+          <div class="hobbies d-flex">
+            <%= f.fields_for :hobbies do |hobby| %>
+              <%= render 'hobby_fields', f: hobby %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Hobby"), f, :hobbies, data: {association_insertion_node: '.hobbies', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
+        </div>
+      </div>
+      <!-- PROFILE SUMMARY -->
+      <%= f.label :profile_summary, "Profile Summary :" %>
+      <%= f.text_area :profile_summary ,placeholder: "Enter Your Profile Summary",class:"mb-2 form-control",  rows: 5  %>
+      <br>
+      <!-- EXPERIENCE -->
+      <!-- JOB #1 -->
+      <div class="form-group row mt-3">
+        <div class="form-group col-md-4">
+          <%= f.label :pr_job_title_1, "Job Title 1 :" %>
+          <%= f.text_field :pr_job_title_1 ,placeholder: "Enter Your #1 Job Title",class:"mb-2 form-control" %>
+          <br>
+          <%= f.label :pr_job_role_1, "Job Role 1 :" %>
+          <%= f.text_field :pr_job_role_1 ,placeholder: "Enter Your #1 Job Role",class:"mb-2 form-control" %>
+          <br>
+          <%= f.label :pr_job_description_1, "Job Description 1 :" %>
+          <%= f.text_area :pr_job_description_1 ,placeholder: "Enter Your #1 Job Description",class:"mb-2 form-control",  rows: 5 %>
+          <br>
+        </div>
+        <!-- JOB #2 -->
+        <div class="form-group col-md-4">
+          <%= f.label :pr_job_title_2, "Job Title 2 :" %>
+          <%= f.text_field :pr_job_title_2 ,placeholder: "Enter Your #2 Job Title",class:"mb-2 form-control" %>
+          <br>
+          <%= f.label :pr_job_role_2, "Job Role 2 :" %>
+          <%= f.text_field :pr_job_role_2 ,placeholder: "Enter Your #2 Job Role",class:"mb-2 form-control" %>
+          <br>
+          <%= f.label :pr_job_description_2, "Job Description 2 :" %>
+          <%= f.text_area :pr_job_description_2 ,placeholder: "Enter Your #2 Job Description",class:"mb-2 form-control", rows: 5 %>
+          <br>
+        </div>
+        <!-- JOB #3 -->
+        <div class="form-group col-md-4">
+          <%= f.label :pr_job_title_3, "Job Title 3 :" %>
+          <%= f.text_field :pr_job_title_3 ,placeholder: "Enter Your #3 Job Title",class:"mb-2 form-control" %>
+          <br>
+          <%= f.label :pr_job_role_3, "Job Role 3 :" %>
+          <%= f.text_field :pr_job_role_3 ,placeholder: "Enter Your #3 Job Role",class:"mb-2 form-control" %>
+          <br>
+          <%= f.label :pr_job_description_3, "Job Description 3 :" %>
+          <%= f.text_area :pr_job_description_3 ,placeholder: "Enter Your #3 Job Description",class:"mb-2 form-control", rows: 5 %>
+          <br>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="form-group col-md-4">
+          <%= f.submit class:"btn-primary border-0 rounded-pill shadow p-3" %>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>

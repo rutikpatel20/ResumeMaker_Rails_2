@@ -30,16 +30,14 @@
       <li><%= expertise.expertise %></li>
     <% end %>
     <!-- EDUCATION  -->
-    <p class="block-relative caps side-header">Education</p>
-    <p class="block-relative list-thing light-text"><%= @resume.degree_1 %></p>
-    <p class="block-relative list-thing bold-text"><%= @resume.college_1 %></p>
-    <p class="block-relative list-thing light-text"><%= @resume.degree_2 %></p>
-    <p class="block-relative list-thing bold-text"><%= @resume.college_2 %></p>
+    <% @educations.each do |education| %>
+      <li><%= education.degree_title %></li>
+      <li><%= education.study_organization_name %></li>
+    <% end %>
     <!-- HOBBIES -->
-    <p class="block-relative caps side-header">Hobbies</p>
-    <p class="block-relative list-thing"><%= @resume.hobby_1 %></p>
-    <p class="block-relative list-thing"><%= @resume.hobby_2 %></p>
-    <p class="block-relative list-thing"><%= @resume.hobby_3 %></p>
+    <% @hobbies.each do |hobby| %>
+      <li><%= hobby.hobby_name %></li>
+    <% end %>
   </div>
   <div class="block-relative content-container">
     <!-- CURRENT ROLE -->
