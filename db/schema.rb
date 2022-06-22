@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_21_132519) do
+ActiveRecord::Schema.define(version: 2022_06_22_061736) do
 
   create_table "educations", force: :cascade do |t|
     t.string "degree_title"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 2022_06_21_132519) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume_id"
     t.index ["resume_id"], name: "index_educations_on_resume_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "job_title"
+    t.string "employer"
+    t.string "start_date"
+    t.string "end_date"
+    t.string "job_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume_id"
+    t.index ["resume_id"], name: "index_experiences_on_resume_id"
   end
 
   create_table "expertises", force: :cascade do |t|
@@ -60,15 +72,6 @@ ActiveRecord::Schema.define(version: 2022_06_21_132519) do
     t.string "social_media_2"
     t.string "social_media_3"
     t.string "profile_summary"
-    t.string "pr_job_title_1"
-    t.string "pr_job_role_1"
-    t.string "pr_job_description_1"
-    t.string "pr_job_title_2"
-    t.string "pr_job_role_2"
-    t.string "pr_job_description_2"
-    t.string "pr_job_title_3"
-    t.string "pr_job_role_3"
-    t.string "pr_job_description_3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"

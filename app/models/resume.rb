@@ -37,4 +37,7 @@ class Resume < ApplicationRecord
   has_many :educations
   accepts_nested_attributes_for :educations, allow_destroy: true,
                                              reject_if: proc { |att| att["degree_title"].blank? || att["study_organization_name"].blank? }
+  has_many :experiences
+  accepts_nested_attributes_for :experiences, allow_destroy: true,
+                                              reject_if: proc { |att| att["job_title"].blank? || att["employer"].blank? || att["job_description"].blank? }
 end

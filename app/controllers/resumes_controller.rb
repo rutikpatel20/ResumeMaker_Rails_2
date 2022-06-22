@@ -10,13 +10,14 @@ class ResumesController < ApplicationController
     @expertises = @resume.expertises.build
     @hobbies = @resume.hobbies.build
     @educations = @resume.educations.build
+    @experiences = @resume.experiences.build
   end
 
   def create
     @resume = Resume.create(resume_params)
     if @resume.save
       flash[:errors] = "Resume Build Successfully"
-      redirect_to resumes_path
+      redirect_to resume_path(@resume)
     else
       flash[:errors] = @resume.errors.full_messages
       redirect_to new_resume_path
@@ -30,6 +31,7 @@ class ResumesController < ApplicationController
     @expertises = @resume.expertises
     @hobbies = @resume.hobbies
     @educations = @resume.educations
+    @experiences = @resume.experiences
   end
 
   def update
@@ -59,6 +61,6 @@ class ResumesController < ApplicationController
   end
 
   def resume_params
-    params.require(:resume).permit(:name, :profile_pic, :current_role, :address_line_1, :address_line_2, :address_line_3, :email, :social_media_1, :social_media_2, :social_media_3, :degree_1, :college_1, :degree_2, :college_2, :hobby_1, :hobby_2, :hobby_3, :profile_summary, :pr_job_title_1, :pr_job_role_1, :pr_job_description_1, :pr_job_title_2, :pr_job_role_2, :pr_job_description_2, :pr_job_title_3, :pr_job_role_3, :pr_job_description_3, expertises_attributes: [:id, :expertise], hobbies_attributes: [:id, :hobby_name], educations_attributes: [:id, :degree_title, :study_organization_name])
+    params.require(:resume).permit(:name, :profile_pic, :current_role, :address_line_1, :address_line_2, :address_line_3, :email, :social_media_1, :social_media_2, :social_media_3, :degree_1, :college_1, :degree_2, :college_2, :hobby_1, :hobby_2, :hobby_3, :profile_summary, expertises_attributes: [:id, :expertise], hobbies_attributes: [:id, :hobby_name], educations_attributes: [:id, :degree_title, :study_organization_name], experiences_attributes: [:id, :job_title, :employer, :start_date, :end_date, :job_description])
   end
 end
