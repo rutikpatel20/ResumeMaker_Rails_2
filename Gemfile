@@ -70,3 +70,10 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.8"
 
 # Devise Gem for authentication
 gem 'devise'
+
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-github"
+gem "omniauth-google-oauth2"
+gem "activerecord-session_store"
+gem "omniauth-rails_csrf_protection"
