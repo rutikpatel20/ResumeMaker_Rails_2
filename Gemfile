@@ -67,3 +67,6 @@ gem "cocoon"
 
 # Fontawesome Gem
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.8"
+
+# Devise Gem for authentication
+gem 'devise'
