@@ -59,7 +59,7 @@
     <div class="block-relative caps greyed">Experience</div>
     <% @experiences.each do |experience| %>
       <h3><%= experience.job_title %>, <%= experience.employer %></h3>
-      <p class="light"><%= experience.start_date %> - <%= experience.end_date %></p>
+      <p class="light"><%= experience.start_date %> TO <%= experience.end_date %></p>
       <p class="justified"><%= experience.job_description %></p>
     <% end %>
     <!------- EXPERIENCE ENDS HERE ------->
