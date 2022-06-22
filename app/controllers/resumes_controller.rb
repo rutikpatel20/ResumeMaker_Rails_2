@@ -28,6 +28,8 @@ class ResumesController < ApplicationController
 
   def show
     @expertises = @resume.expertises
+    @hobbies = @resume.hobbies
+    @educations = @resume.educations
   end
 
   def update
