@@ -69,7 +69,7 @@ gem "cocoon"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.8"
 
 # Devise Gem for authentication
-gem 'devise'
+gem "devise"
 
 gem "omniauth"
 gem "omniauth-facebook"
