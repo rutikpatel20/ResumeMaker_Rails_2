@@ -25,6 +25,15 @@
           <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
+      <div class="d-flex align-items-center">
+        <% if signed_in? %>
+          <%= link_to current_user.email, edit_user_registration_path %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }, class:"btn-danger border-0 rounded-pill shadow px-3 py-2 m-2 text-decoration-none" %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path, class:"btn-success border-0 rounded-pill shadow px-3 py-2 m-2 text-decoration-none" %>
+          <%= link_to "Register", new_user_registration_path, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 my-2 text-decoration-none" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </nav>
