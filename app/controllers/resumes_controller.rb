@@ -55,6 +55,9 @@ class ResumesController < ApplicationController
     end
   end
 
+  def pricing_card
+  end
+
   private
 
   def set_resume_params

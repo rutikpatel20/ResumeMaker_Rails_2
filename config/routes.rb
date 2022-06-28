@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :resumes
   # root "resumes#index"
   root "welcomes#index"
+
+  get "/pricing", to: "resumes#pricing_card"
 end
