@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
   before_action :set_resume_params, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @resumes = Resume.all
