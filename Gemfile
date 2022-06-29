@@ -77,3 +77,6 @@ gem "omniauth-github"
 gem "omniauth-google-oauth2"
 gem "activerecord-session_store"
 gem "omniauth-rails_csrf_protection"
+
+# For Payment Integration
+gem "stripe"
