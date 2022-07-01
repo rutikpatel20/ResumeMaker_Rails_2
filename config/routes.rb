@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # root "resumes#index"
   root "welcomes#index"
 
-  get "/pricing", to: "resumes#pricing_card"
+  get "pricing", to: "static_pages#pricing"
+  post "checkout/create", to: "checkout#create", as: "checkout_create"
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_22_104609) do
+ActiveRecord::Schema.define(version: 2022_06_30_130750) do
 
   create_table "educations", force: :cascade do |t|
     t.string "degree_title"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2022_06_22_104609) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider", limit: 50, default: "", null: false
     t.string "uid", limit: 500, default: "", null: false
+    t.string "stripe_customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
