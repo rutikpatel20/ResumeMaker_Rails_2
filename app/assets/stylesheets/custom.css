@@ -99,3 +99,6 @@ p a{
 }
 
 /* Pricing Card CSS */
+.checkout-card:hover{
+  transform: scale(1.1);
+}
