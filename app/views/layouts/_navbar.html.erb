@@ -27,6 +27,7 @@
       </ul>
       <div class="d-flex align-items-center">
         <% if signed_in? %>
+          <%= link_to "Billing Portal", billing_portal_create_path, method: :post %>
           Stripe Customer id :
           <%= current_user.stripe_customer_id %>
           <br>
