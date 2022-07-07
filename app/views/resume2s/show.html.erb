@@ -3,7 +3,12 @@
     <div class="resume2">
       <div class="left">
         <br>
-        <div class="profile-img"><img src="image/Rutik_Patel.jpg"></div>
+        <div class="profile-img">
+          <% if @resume2.profile_pic? %>
+            <%# <img src="images/Rutik_Patel.jpg" alt=""> %>
+            <%= image_tag @resume2.profile_pic.url,alt: "Image not available", class:"card-img img-resposive" %>
+          <% end %>
+        </div>
         <div class="box-1">
           <div class="heading">
             <p>CONTACT</p>
