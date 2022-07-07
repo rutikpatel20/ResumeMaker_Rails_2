@@ -1,32 +1,22 @@
-/* 
-body {
-  background-image: linear-gradient(#636162, #b1afaf);
-  height: 122vh;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-* {
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Montserrat', sans-serif;
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
   --lightred: #ff8484;
 }
 
-.resume2{
+.resume2-main .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume2 {
   background-color: white;
-  height: auto;
-  width: 650px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 70%;
-  margin-top: 2rem;
+  margin: 2rem 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif !important;
+  /* width: 60%; */
 }
 
 .resume2 .left {
@@ -67,7 +57,11 @@ body {
   color: var(--lightred);
   text-align: left;
   padding-left: 20px;
-  margin-right: -15px;
+  /* margin-right: -15px; */
+}
+
+.resume2 .heading p{
+  margin: 0;
 }
 
 .resume2 .heading::after {
@@ -77,7 +71,7 @@ body {
   height: 18px;
   background-color: #5a5959;
   left: 191px;
-  top: 26px;
+  top: 48px;
   transform: rotate(56deg);
   z-index: -1;
 }
@@ -91,49 +85,6 @@ body {
   font-size: 16px !important;
   padding-right: 10px !important;
   vertical-align: sub;
-}
-
-.resume2 .skill-container {
-  width: 90%;
-  background-color: #4d4d4d;
-  margin: 0px 10px;
-}
-
-.resume2 .skill {
-  text-align: right;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  color: white;
-}
-
-.resume2 .html {
-  width: 90%;
-  background-color: white;
-}
-
-.resume2 .css {
-  width: 80%;
-  background-color: white;
-}
-
-.resume2 .js {
-  width: 85%;
-  background-color: white;
-}
-
-.resume2 .jquery {
-  width: 80%;
-  background-color: white;
-}
-
-.resume2 .web {
-  width: 85%;
-  background-color: white;
-}
-
-.resume2 .gra {
-  width: 70%;
-  background-color: white;
 }
 
 .resume2 .icons2 {
@@ -164,7 +115,7 @@ body {
   margin-top: 5px;
 }
 
-h2 {
+.resume2 h2 {
   font-size: 16px;
   margin-bottom: 15px;
 }
