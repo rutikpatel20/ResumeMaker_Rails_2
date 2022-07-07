@@ -52,37 +52,21 @@
         </div>
         <div class="box-2">
           <h2>EDUCATION <i class="fa fa-mortar-board icons3" >fa-mortar-board</i></h2>
-          <p class="p3">2010-2012 <span><%= @resume2.education %></span></p>
-          <p class="p2">
-            College Name Will Be Displayed Here
-          </p>
-          <p class="p3">2010-2012 <span><%= @resume2.education %></span></p>
-          <p class="p2">
-            College Name Will Be Displayed Here
-          </p>
-          <p class="p3">2010-2012 <span><%= @resume2.education %></span></p>
-          <p class="p2">
-            College Name Will Be Displayed Here
-          </p>
-          <p class="p3">2010-2012 <span><%= @resume2.education %></span></p>
-          <p class="p2">
-            College Name Will Be Displayed Here
-          </p>
+          <% @education2s.each do |education2| %>
+            <p class="p3"> <%= education2.start_year2 %> - <%= education2.end_year2 %> <span><%= education2.degree_title2 %></span></p>
+            <p class="p2">
+              <%= education2.study_organization_name2 %>
+            </p>
+          <% end %>
         </div>
         <div class="box-2">
           <h2>WORK EXPERIENCE <i class="fa fa-briefcase icons3" >briefcase</i></h2>
-          <p class="p3">2010-2013 <span><%= @resume2.experiences %></span></p>
-          <p class="p2">
-            Company Name and work Will Be Displayed Here
-          </p>
-          <p class="p3">2010-2013 <span><%= @resume2.experiences %></span></p>
-          <p class="p2">
-            Company Name and work Will Be Displayed Here
-          </p>
-          <p class="p3">2010-2013 <span><%= @resume2.experiences %></span></p>
-          <p class="p2">
-            Company Name and work Will Be Displayed Here
-          </p>
+          <% @experience2s.each do |experience2| %>
+            <p class="p3"> <%= experience2.start_date2 %> - <%= experience2.end_date2 %>  <span><%= experience2.employer2 %></span></p>
+            <p class="p2">
+              Company Name and work Will Be Displayed Here
+            </p>
+          <% end %>
         </div>
       </div>
     </div>

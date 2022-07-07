@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_07_091308) do
+ActiveRecord::Schema.define(version: 2022_07_07_094546) do
+
+  create_table "education2s", force: :cascade do |t|
+    t.string "degree_title2"
+    t.string "study_organization_name2"
+    t.string "start_year2"
+    t.string "end_year2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume2_id"
+    t.index ["resume2_id"], name: "index_education2s_on_resume2_id"
+  end
 
   create_table "educations", force: :cascade do |t|
     t.string "degree_title"
@@ -19,6 +30,18 @@ ActiveRecord::Schema.define(version: 2022_07_07_091308) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume_id"
     t.index ["resume_id"], name: "index_educations_on_resume_id"
+  end
+
+  create_table "experience2s", force: :cascade do |t|
+    t.string "job_title2"
+    t.string "employer2"
+    t.string "start_date2"
+    t.string "end_date2"
+    t.string "work_description2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume2_id"
+    t.index ["resume2_id"], name: "index_experience2s_on_resume2_id"
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -84,8 +107,6 @@ ActiveRecord::Schema.define(version: 2022_07_07_091308) do
     t.string "contact_number"
     t.string "email"
     t.string "linkedin_username"
-    t.string "education"
-    t.string "experiences"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
