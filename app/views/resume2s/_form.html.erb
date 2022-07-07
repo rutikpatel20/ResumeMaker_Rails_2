@@ -2,77 +2,82 @@
 <div class="container form-container">
   <div class="flex-column">
     <!-- Form Started Here -->
-    <%= form_for @resume2 do |resume| %>
+    <%= form_for @resume2 do |f| %>
       <div class="form-group row">
         <div class="form-group col-md-7">
-          <%= resume.label :name, "Name :", class:"mt-3" %>
-          <%= resume.text_field :name, placeholder: "Enter Your Name",class:"mb-2 form-control" %>
+          <%= f.label :name, "Name :", class:"mt-3" %>
+          <%= f.text_field :name, placeholder: "Enter Your Name",class:"mb-2 form-control" %>
           <br>
         </div>
         <div class="form-group col-md-5">
-          <%= resume.label :current_role, "Current Role :", class:"mt-3" %>
-          <%= resume.text_field :current_role, placeholder: "Enter Your Current Role", class:"mb-2 form-control" %>
+          <%= f.label :current_role, "Current Role :", class:"mt-3" %>
+          <%= f.text_field :current_role, placeholder: "Enter Your Current Role", class:"mb-2 form-control" %>
           <br>
         </div>
       </div>
-      <%= resume.label :profile_pic, "Profile Pic :" %>
-      <%= resume.file_field :profile_pic, placeholder: "Enter Your Pic", class:"mb-2 form-control" %>
+      <%= f.label :profile_pic, "Profile Pic :" %>
+      <%= f.file_field :profile_pic, placeholder: "Enter Your Pic", class:"mb-2 form-control" %>
       <br>
       <div class="form-group row">
         <div class="form-group col-md-4">
-          <%= resume.label :contact_number, "Contact :" %>
-          <%= resume.text_field :contact_number, placeholder: "Contact",class:"mb-2 form-control" %>
+          <%= f.label :contact_number, "Contact :" %>
+          <%= f.text_field :contact_number, placeholder: "Contact",class:"mb-2 form-control" %>
           <br>
         </div>
         <div class="form-group col-md-4">
-          <%= resume.label :email, "Email :" %>
-          <%= resume.text_field :email, placeholder: "Email-ID",class:"mb-2 form-control" %>
+          <%= f.label :email, "Email :" %>
+          <%= f.text_field :email, placeholder: "Email-ID",class:"mb-2 form-control" %>
           <br>
         </div>
         <div class="form-group col-md-4">
-          <%= resume.label :linkedin_username, "Linkedin :" %>
-          <%= resume.text_field :linkedin_username, placeholder: "Linkedin Username",class:"mb-2 form-control" %>
+          <%= f.label :linkedin_username, "Linkedin :" %>
+          <%= f.text_field :linkedin_username, placeholder: "Linkedin Username",class:"mb-2 form-control" %>
           <br>
         </div>
       </div>
       <br>
       <div class="form-group row">
         <div class="form-group col-md-4">
-          <%= resume.label :programming_language, "Programming Language :" %>
-          <%= resume.text_field :programming_language, placeholder: "Programming Language",class:"mb-2 form-control" %>
+          <div class="programminglang2s d-flex">
+            <%= f.fields_for :programminglang2s do |programminglang2| %>
+              <%= render 'programminglang2_fields', f: programminglang2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Lang"), f, :programminglang2s, data: {association_insertion_node: '.programminglang2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="form-group col-md-4">
+          <%= f.label :skills, "Skills :" %>
+          <%= f.text_field :skills, placeholder: "Skills",class:"mb-2 form-control" %>
           <br>
         </div>
         <div class="form-group col-md-4">
-          <%= resume.label :skills, "Skills :" %>
-          <%= resume.text_field :skills, placeholder: "Skills",class:"mb-2 form-control" %>
-          <br>
-        </div>
-        <div class="form-group col-md-4">
-          <%= resume.label :hobbies, "Hobby :" %>
-          <%= resume.text_field :hobbies, placeholder: "Enter Your Hobby",class:"mb-2 form-control" %>
+          <%= f.label :hobbies, "Hobby :" %>
+          <%= f.text_field :hobbies, placeholder: "Enter Your Hobby",class:"mb-2 form-control" %>
           <br>
         </div>
       </div>
       <!-- EXPERTISE -->
       <div class="form-group row">
         <div class="form-group col-md-6">
-          <%= resume.label :education, "Education :" %>
-          <%= resume.text_field :education, placeholder: "Enter Your Education",class:"mb-2 form-control" %>
+          <%= f.label :education, "Education :" %>
+          <%= f.text_field :education, placeholder: "Enter Your Education",class:"mb-2 form-control" %>
           <br>
         </div>
         <div class="form-group col-md-6">
-          <%= resume.label :experiences, "Experiences :" %>
-          <%= resume.text_field :experiences, placeholder: "Enter Your Experience",class:"mb-2 form-control" %>
+          <%= f.label :experiences, "Experiences :" %>
+          <%= f.text_field :experiences, placeholder: "Enter Your Experience",class:"mb-2 form-control" %>
           <br>
         </div>
       </div>
       <!-- PROFILE SUMMARY -->
-      <%= resume.label :profile_summary, "Profile Summary :" %>
-      <%= resume.text_area :profile_summary, placeholder: "Enter Your Profile Summary",class:"mb-2 form-control",  rows: 5  %>
+      <%= f.label :profile_summary, "Profile Summary :" %>
+      <%= f.text_area :profile_summary, placeholder: "Enter Your Profile Summary",class:"mb-2 form-control",  rows: 5  %>
       <br>
       <div class="form-group row">
         <div class="form-group col-md-4">
-          <%= resume.submit class:"btn-primary border-0 rounded-pill shadow p-3" %>
+          <%= f.submit class:"btn-primary border-0 rounded-pill shadow p-3" %>
         </div>
       <% end %>
     </div>

@@ -16,9 +16,9 @@
           <div class="heading">
             <p>LANGUAGES</p>
           </div>
-          <p class="p1"><%= @resume2.programming_language %></p>
-          <p class="p1"><%= @resume2.programming_language %></p>
-          <p class="p1"><%= @resume2.programming_language %></p>
+          <% @programminglang2s.each do |programminglang2| %>
+            <p class="p1"><%= programminglang2.programminglang2 %></p>
+          <% end %>
         </div>
         <br>
         <div class="box-1">

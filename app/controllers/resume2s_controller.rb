@@ -7,6 +7,7 @@ class Resume2sController < ApplicationController
 
   def new
     @resume2 = Resume2.new
+    @programminglang2s = @resume2.programminglang2s.build
   end
 
   def create
@@ -24,6 +25,7 @@ class Resume2sController < ApplicationController
   end
 
   def show
+    @programminglang2s = @resume2.programminglang2s
   end
 
   def update
@@ -53,6 +55,6 @@ class Resume2sController < ApplicationController
   end
 
   def resume2_params
-    params.require(:resume2).permit(:name, :profile_pic, :current_role, :profile_summary, :contact_number, :email, :linkedin_username, :programming_language, :skills, :hobbies, :education, :experiences)
+    params.require(:resume2).permit(:name, :profile_pic, :current_role, :profile_summary, :contact_number, :email, :linkedin_username, :skills, :hobbies, :education, :experiences, programminglang2s_attributes: [:id, :programminglang2])
   end
 end
