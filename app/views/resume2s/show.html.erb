@@ -67,9 +67,9 @@
         <div class="box-2">
           <h2>WORK EXPERIENCE <i class="fa fa-briefcase icons3" >briefcase</i></h2>
           <% @experience2s.each do |experience2| %>
-            <p class="p3"> <%= experience2.start_date2 %> - <%= experience2.end_date2 %>  <span><%= experience2.employer2 %></span></p>
+            <p class="p3"> <%= experience2.start_date2 %> - <%= experience2.end_date2 %>  <span><%= experience2.job_title2 %>, <%= experience2.employer2 %></span></p>
             <p class="p2">
-              Company Name and work Will Be Displayed Here
+              <%= experience2.work_description2 %>
             </p>
           <% end %>
         </div>
