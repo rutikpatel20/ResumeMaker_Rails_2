@@ -25,19 +25,18 @@
           <div class="heading">
             <p>SKILLS</p>
           </div>
-          <p class="p1"><%= @resume2.skills %> </p>
-          <p class="p1"><%= @resume2.skills %> </p>
-          <p class="p1"><%= @resume2.skills %> </p>
-          <p class="p1"><%= @resume2.skills %> </p>
+          <% @skill2s.each do |skill2| %>
+            <p class="p1"><%= skill2.skill2 %></p>
+          <% end %>
         </div>
         <br>
         <div class="box-1">
           <div class="heading">
             <p>HOBBIES</p>
           </div>
-          <p class="p1"><%= @resume2.hobbies %> </p>
-          <p class="p1"><%= @resume2.hobbies %> </p>
-          <p class="p1"><%= @resume2.hobbies %> </p>
+          <% @hobby2s.each do |hobby2| %>
+            <p class="p1"><%= hobby2.hobby2 %></p>
+          <% end %>
         </div>
       </div>
       <div class="right">

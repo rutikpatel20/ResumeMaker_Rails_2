@@ -36,8 +36,9 @@
         </div>
       </div>
       <br>
+      <!-- Programming Language -->
       <div class="form-group row">
-        <div class="form-group col-md-4">
+        <div class="form-group">
           <div class="programminglang2s d-flex">
             <%= f.fields_for :programminglang2s do |programminglang2| %>
               <%= render 'programminglang2_fields', f: programminglang2 %>
@@ -46,16 +47,26 @@
           <%= link_to_add_association fa_icon("plus", text: "Add Lang"), f, :programminglang2s, data: {association_insertion_node: '.programminglang2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
         </div>
       </div>
+      <!-- Skills -->
       <div class="form-group row">
-        <div class="form-group col-md-4">
-          <%= f.label :skills, "Skills :" %>
-          <%= f.text_field :skills, placeholder: "Skills",class:"mb-2 form-control" %>
-          <br>
+        <div class="form-group">
+          <div class="skill2s d-flex">
+            <%= f.fields_for :skill2s do |skill2| %>
+              <%= render 'skill2_fields', f: skill2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Skill"), f, :skill2s, data: {association_insertion_node: '.skill2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
         </div>
-        <div class="form-group col-md-4">
-          <%= f.label :hobbies, "Hobby :" %>
-          <%= f.text_field :hobbies, placeholder: "Enter Your Hobby",class:"mb-2 form-control" %>
-          <br>
+      </div>
+      <!-- Hobbies -->
+      <div class="form-group row">
+        <div class="form-group">
+          <div class="hobby2s d-flex">
+            <%= f.fields_for :hobby2s do |hobby2| %>
+              <%= render 'hobby2_fields', f: hobby2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Hobby"), f, :hobby2s, data: {association_insertion_node: '.hobby2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
         </div>
       </div>
       <!-- EXPERTISE -->
