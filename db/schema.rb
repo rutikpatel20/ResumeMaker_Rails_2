@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_07_094546) do
+ActiveRecord::Schema.define(version: 2022_07_08_061623) do
 
   create_table "education2s", force: :cascade do |t|
     t.string "degree_title2"
@@ -107,6 +107,23 @@ ActiveRecord::Schema.define(version: 2022_07_07_094546) do
     t.string "contact_number"
     t.string "email"
     t.string "linkedin_username"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "resume3s", force: :cascade do |t|
+    t.string "name"
+    t.string "profile_pic"
+    t.string "current_role"
+    t.string "profile_summary"
+    t.string "contact_number"
+    t.string "email"
+    t.string "linkedin_username"
+    t.string "skill"
+    t.string "award"
+    t.string "experience"
+    t.string "education"
+    t.string "known_language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
