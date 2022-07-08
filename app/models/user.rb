@@ -10,4 +10,13 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
+
+  def to_s
+    email
+  end
+
+  after_create do
+    customer = Stripe::Customer.create(email: self.email)
+    update(stripe_customer_id: customer.id)
+  end
 end

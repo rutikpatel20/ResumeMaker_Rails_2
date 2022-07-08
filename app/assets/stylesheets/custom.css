@@ -97,3 +97,8 @@ body:before {
 p a{
   text-decoration: none;
 }
+
+/* Pricing Card CSS */
+.checkout-card:hover{
+  transform: scale(1.1);
+}

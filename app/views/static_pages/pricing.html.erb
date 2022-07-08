@@ -1,0 +1,50 @@
+<h2 class="text-center my-5"> ResumeMaker Subscription Prices</h2>
+<div class="pricing-card container">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <% @pricing = Stripe::Price.list(lookup_keys: ["resume_2Temp_300", "resume_4Temp_400", "resume_6Temp_600"], expand: ["data.product"]) %>
+    <% @pricing.each do |price| %>
+      <div class="col">
+        <% if price.unit_amount/100 == 300 %>
+          <div class="card mb-4 rounded-3 shadow-sm border-primary checkout-card">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Basic</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><%= price.unit_amount/100 %> ₹<small class="text-muted fw-light">/<%= price.recurring.interval %></small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>2 Templates</li>
+              </ul>
+              <%= link_to "Checkout", checkout_create_path(price: price.id), method: :post, class:"btn btn-primary btn-lg w-100 checkout-btn", remote: true %>
+            </div>
+          </div>
+        <% elsif price.unit_amount/100 == 400 %>
+          <div class="card mb-4 rounded-3 shadow-sm border-success checkout-card">
+            <div class="card-header py-3 text-white bg-success border-success">
+              <h4 class="my-0 fw-normal">Pro</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><%= price.unit_amount/100 %> ₹<small class="text-muted fw-light">/<%= price.recurring.interval %></small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>4 Templates</li>
+              </ul>
+              <%= link_to "Checkout", checkout_create_path(price: price.id), method: :post, class:"btn btn-success btn-lg w-100 checkout-btn", remote: true %>
+            </div>
+          </div>
+        <% else %>
+          <div class="card mb-4 rounded-3 shadow-sm border-warning checkout-card">
+            <div class="card-header py-3 text-white bg-warning border-warning">
+              <h4 class="my-0 fw-normal">Premium</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><%= price.unit_amount/100 %> ₹<small class="text-muted fw-light">/<%= price.recurring.interval %></small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>6 Templates</li>
+              </ul>
+              <%= link_to "Checkout", checkout_create_path(price: price.id), method: :post, class:"btn btn-warning btn-lg w-100 checkout-btn", remote: true %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
