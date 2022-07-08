@@ -13,7 +13,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="/pricing">Pricing</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Samples</a>
@@ -27,11 +27,7 @@
       </ul>
       <div class="d-flex align-items-center">
         <% if signed_in? %>
-          <%= link_to "Billing Portal", billing_portal_create_path, method: :post %>
-          Stripe Customer id :
-          <%= current_user.stripe_customer_id %>
-          <br>
-          <%= link_to current_user.email, edit_user_registration_path %>
+          <%= button_to "User Profile", profile_path, method: :get, class:"btn btn-success rounded-pill" %>
           <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }, class:"btn-danger border-0 rounded-pill shadow px-3 py-2 m-2 text-decoration-none" %>
         <% else %>
           <%= link_to "Log in", new_user_session_path, class:"btn-success border-0 rounded-pill shadow px-3 py-2 m-2 text-decoration-none" %>

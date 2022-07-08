@@ -102,3 +102,8 @@ p a{
 .checkout-card:hover{
   transform: scale(1.1);
 }
+
+/* Profile Card CSS */
+.profile-image img{
+  width: 50%;
+}
