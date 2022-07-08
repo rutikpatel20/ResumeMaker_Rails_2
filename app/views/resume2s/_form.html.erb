@@ -1,0 +1,107 @@
+<!-- Add New Resume -->
+<div class="container form-container">
+  <div class="flex-column">
+    <!-- Form Started Here -->
+    <%= form_for @resume2 do |f| %>
+      <div class="form-group row">
+        <div class="form-group col-md-7">
+          <%= f.label :name, "Name :", class:"mt-3" %>
+          <%= f.text_field :name, placeholder: "Enter Your Name",class:"mb-2 form-control" %>
+          <br>
+        </div>
+        <div class="form-group col-md-5">
+          <%= f.label :current_role, "Current Role :", class:"mt-3" %>
+          <%= f.text_field :current_role, placeholder: "Enter Your Current Role", class:"mb-2 form-control" %>
+          <br>
+        </div>
+      </div>
+      <%= f.label :profile_pic, "Profile Pic :" %>
+      <%= f.file_field :profile_pic, placeholder: "Enter Your Pic", class:"mb-2 form-control" %>
+      <br>
+      <div class="form-group row">
+        <div class="form-group col-md-4">
+          <%= f.label :contact_number, "Contact :" %>
+          <%= f.text_field :contact_number, placeholder: "Contact",class:"mb-2 form-control" %>
+          <br>
+        </div>
+        <div class="form-group col-md-4">
+          <%= f.label :email, "Email :" %>
+          <%= f.text_field :email, placeholder: "Email-ID",class:"mb-2 form-control" %>
+          <br>
+        </div>
+        <div class="form-group col-md-4">
+          <%= f.label :linkedin_username, "Linkedin :" %>
+          <%= f.text_field :linkedin_username, placeholder: "Linkedin Username",class:"mb-2 form-control" %>
+          <br>
+        </div>
+      </div>
+      <br>
+      <!-- Programming Language -->
+      <div class="form-group row">
+        <div class="form-group">
+          <div class="programminglang2s d-flex">
+            <%= f.fields_for :programminglang2s do |programminglang2| %>
+              <%= render 'programminglang2_fields', f: programminglang2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Lang"), f, :programminglang2s, data: {association_insertion_node: '.programminglang2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
+        </div>
+      </div>
+      <!-- Skills -->
+      <div class="form-group row">
+        <div class="form-group">
+          <div class="skill2s d-flex">
+            <%= f.fields_for :skill2s do |skill2| %>
+              <%= render 'skill2_fields', f: skill2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Skill"), f, :skill2s, data: {association_insertion_node: '.skill2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
+        </div>
+      </div>
+      <!-- Hobbies -->
+      <div class="form-group row">
+        <div class="form-group">
+          <div class="hobby2s d-flex">
+            <%= f.fields_for :hobby2s do |hobby2| %>
+              <%= render 'hobby2_fields', f: hobby2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Hobby"), f, :hobby2s, data: {association_insertion_node: '.hobby2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
+        </div>
+      </div>
+      <!-- Education -->
+      <div class="form-group row mb-5">
+        <div class="form-group">
+          <div class="education2s">
+            <%= f.label :education2s, "Educations", class: "mt-3" %>
+            <%= f.fields_for :education2s do |education2| %>
+              <%= render 'education2_fields', f: education2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Education"), f, :education2s, data: {association_insertion_node: '.education2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %>
+        </div>
+      </div>
+      <!-- Experience -->
+      <div class="form-group row mb-5">
+        <div class="form-group">
+          <div class="experience2s">
+            <%= f.label :experience2s, "Experience", class: "mt-3" %>
+            <%= f.fields_for :experience2s do |experience2| %>
+              <%= render 'experience2_fields', f: experience2 %>
+            <% end %>
+          </div>
+          <%= link_to_add_association fa_icon("plus", text: "Add Experience"), f, :experience2s, data: {association_insertion_node: '.experience2s', association_insertion_method: :append}, class:"btn-primary border-0 rounded-pill shadow px-3 py-2 mt-3 text-decoration-none" %>
+        </div>
+      </div>
+      <!-- PROFILE SUMMARY -->
+      <%= f.label :profile_summary, "Profile Summary :" %>
+      <%= f.text_area :profile_summary, placeholder: "Enter Your Profile Summary",class:"mb-2 form-control",  rows: 5  %>
+      <br>
+      <div class="form-group row">
+        <div class="form-group col-md-4">
+          <%= f.submit class:"btn-primary border-0 rounded-pill shadow p-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

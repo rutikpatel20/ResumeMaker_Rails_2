@@ -1,0 +1,79 @@
+<div class="resume2-main">
+  <div class="container">
+    <div class="resume2">
+      <div class="left">
+        <br>
+        <div class="profile-img">
+          <% if @resume2.profile_pic? %>
+            <%# <img src="images/Rutik_Patel.jpg" alt=""> %>
+            <%= image_tag @resume2.profile_pic.url,alt: "Image not available", class:"card-img img-resposive" %>
+          <% end %>
+        </div>
+        <div class="box-1">
+          <div class="heading">
+            <p>CONTACT</p>
+          </div>
+          <p class="p1"><i class="fa fa-phone icons1">Call</i><%= @resume2.contact_number %></p>
+          <p class="p1"><i class="fa fa-envelope icons1">Email</i><%= @resume2.email %></p>
+          <p class="p1"><i class="fab fa-linkedin icons1">Email</i><%= @resume2.linkedin_username %></p>
+        </div>
+        <div class="box-1">
+          <div class="heading">
+            <p>LANGUAGES</p>
+          </div>
+          <% @programminglang2s.each do |programminglang2| %>
+            <p class="p1"><%= programminglang2.programminglang2 %></p>
+          <% end %>
+        </div>
+        <br>
+        <div class="box-1">
+          <div class="heading">
+            <p>SKILLS</p>
+          </div>
+          <% @skill2s.each do |skill2| %>
+            <p class="p1"><%= skill2.skill2 %></p>
+          <% end %>
+        </div>
+        <br>
+        <div class="box-1">
+          <div class="heading">
+            <p>HOBBIES</p>
+          </div>
+          <% @hobby2s.each do |hobby2| %>
+            <p class="p1"><%= hobby2.hobby2 %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="right">
+        <div class="name-div">
+          <h1><%= @resume2.name %></h1>
+          <p><%= @resume2.current_role %></p>
+        </div>
+        <div class="box-2">
+          <h2>ABOUT ME <i class="fa fa-user icons3" style="font-size: 28px!important;">Call</i></h2>
+          <p class="p2">
+            <%= @resume2.profile_summary %>
+          </p>
+        </div>
+        <div class="box-2">
+          <h2>EDUCATION <i class="fa fa-mortar-board icons3" >fa-mortar-board</i></h2>
+          <% @education2s.each do |education2| %>
+            <p class="p3"> <%= education2.start_year2 %> - <%= education2.end_year2 %> <span><%= education2.degree_title2 %></span></p>
+            <p class="p2">
+              <%= education2.study_organization_name2 %>
+            </p>
+          <% end %>
+        </div>
+        <div class="box-2">
+          <h2>WORK EXPERIENCE <i class="fa fa-briefcase icons3" >briefcase</i></h2>
+          <% @experience2s.each do |experience2| %>
+            <p class="p3"> <%= experience2.start_date2 %> - <%= experience2.end_date2 %>  <span><%= experience2.job_title2 %>, <%= experience2.employer2 %></span></p>
+            <p class="p2">
+              <%= experience2.work_description2 %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
