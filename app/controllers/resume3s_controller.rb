@@ -7,6 +7,9 @@ class Resume3sController < ApplicationController
 
   def new
     @resume3 = Resume3.new
+    @skill3s = @resume3.skill3s.build
+    @award3s = @resume3.award3s.build
+    @knownlang3s = @resume3.knownlang3s.build
   end
 
   def create
@@ -24,6 +27,9 @@ class Resume3sController < ApplicationController
   end
 
   def show
+    @skill3s = @resume3.skill3s
+    @award3s = @resume3.award3s
+    @knownlang3s = @resume3.knownlang3s
   end
 
   def update
@@ -53,6 +59,6 @@ class Resume3sController < ApplicationController
   end
 
   def resume3_params
-    params.require(:resume3).permit(:name, :profile_pic, :current_role, :profile_summary, :contact_number, :email, :linkedin_username, :skill, :award, :experience, :education, :known_language)
+    params.require(:resume3).permit(:name, :profile_pic, :current_role, :profile_summary, :contact_number, :email, :linkedin_username, :experience, :education, skill3s_attributes: [:id, :skill3], award3s_attributes: [:id, :award3], knownlang3s_attributes: [:id, :knownlang3])
   end
 end

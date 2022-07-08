@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_061623) do
+ActiveRecord::Schema.define(version: 2022_07_08_123559) do
+
+  create_table "award3s", force: :cascade do |t|
+    t.string "award3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_award3s_on_resume3_id"
+  end
 
   create_table "education2s", force: :cascade do |t|
     t.string "degree_title2"
@@ -91,6 +99,14 @@ ActiveRecord::Schema.define(version: 2022_07_08_061623) do
     t.index ["resume2_id"], name: "index_hobby2s_on_resume2_id"
   end
 
+  create_table "knownlang3s", force: :cascade do |t|
+    t.string "knownlang3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_knownlang3s_on_resume3_id"
+  end
+
   create_table "programminglang2s", force: :cascade do |t|
     t.string "programminglang2"
     t.datetime "created_at", precision: 6, null: false
@@ -119,11 +135,8 @@ ActiveRecord::Schema.define(version: 2022_07_08_061623) do
     t.string "contact_number"
     t.string "email"
     t.string "linkedin_username"
-    t.string "skill"
-    t.string "award"
     t.string "experience"
     t.string "education"
-    t.string "known_language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -161,6 +174,14 @@ ActiveRecord::Schema.define(version: 2022_07_08_061623) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume2_id"
     t.index ["resume2_id"], name: "index_skill2s_on_resume2_id"
+  end
+
+  create_table "skill3s", force: :cascade do |t|
+    t.string "skill3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_skill3s_on_resume3_id"
   end
 
   create_table "users", force: :cascade do |t|

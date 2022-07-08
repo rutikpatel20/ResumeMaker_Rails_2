@@ -8,11 +8,8 @@ class CreateResume3s < ActiveRecord::Migration[6.1]
       t.string :contact_number
       t.string :email
       t.string :linkedin_username
-      t.string :skill
-      t.string :award
       t.string :experience
       t.string :education
-      t.string :known_language
       t.timestamps
     end
   end
