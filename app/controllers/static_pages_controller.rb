@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
 
   def profile
   end
+
+  def resumelist
+  end
 end

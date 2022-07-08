@@ -107,3 +107,8 @@ p a{
 .profile-image img{
   width: 50%;
 }
+
+/* ResumeList Style */
+.resumelist-main{
+  margin: 2rem;
+}
