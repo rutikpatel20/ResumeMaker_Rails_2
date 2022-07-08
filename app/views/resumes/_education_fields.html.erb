@@ -1,0 +1,12 @@
+ <!-- Nested Form of education for f -->
+<div class="nested-fields">
+  <div class="d-flex">
+    <%= f.label :degree_title, "Degree :" %>
+    <%= f.text_field :degree_title ,placeholder: "Enter Your Degree",class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :study_organization_name, "College :" %>
+    <%= f.text_field :study_organization_name ,placeholder: "Enter Your Study Organization Name",class:"mb-2 form-control" %>
+    <br>
+    <%= link_to_remove_association fa_icon("trash"), f, class:"btn-danger border-0 rounded-pill shadow px-3 py-2 mx-2 text-decoration-none", style:"height:100%;" %>
+  </div>
+</div>

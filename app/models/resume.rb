@@ -27,4 +27,17 @@ class Resume < ApplicationRecord
   # validates :pr_job_description_1, presence: true, length: {minimum: 40}
 
   mount_uploader :profile_pic, ProfilepictureUploader
+
+  has_many :expertises, dependent: :destroy
+  accepts_nested_attributes_for :expertises, allow_destroy: true,
+                                             reject_if: proc { |att| att["expertise"].blank? }
+  has_many :hobbies, dependent: :destroy
+  accepts_nested_attributes_for :hobbies, allow_destroy: true,
+                                          reject_if: proc { |att| att["hobby_name"].blank? }
+  has_many :educations, dependent: :destroy
+  accepts_nested_attributes_for :educations, allow_destroy: true,
+                                             reject_if: proc { |att| att["degree_title"].blank? || att["study_organization_name"].blank? }
+  has_many :experiences, dependent: :destroy
+  accepts_nested_attributes_for :experiences, allow_destroy: true,
+                                              reject_if: proc { |att| att["job_title"].blank? || att["employer"].blank? || att["job_description"].blank? }
 end
