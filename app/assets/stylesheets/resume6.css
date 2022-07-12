@@ -1,0 +1,98 @@
+.resume6 .clearfix {
+  clear: both;
+}
+
+.resume6 .main {
+  height: 1150px;
+  width: 800px;
+  background-color: white;
+  box-shadow: 5px 7px 15px 5px #b9b6b6;
+  margin: 20px auto;
+}
+
+.resume6 .top-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.resume6 .p1 {
+  color: #4d4f75;
+  font-size: 3.4rem;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.resume6 .p1 span {
+  font-weight: 100;
+  color: #c7c7c7;
+}
+
+.resume6 .p2 {
+  font-size: 20px;
+  color: #c7c7c7;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.resume6 .col-div-4 {
+  width: 35%;
+  float: left;
+
+}
+
+.resume6 .col-div-8 {
+  width: 62%;
+  float: left;
+}
+
+.resume6 .line {
+  border-left: 1px solid #c7c7c7;
+  height: 800px;
+  width: 2%;
+  margin-top: 30px;
+  float: left;
+}
+
+.resume6 .content-box {
+  padding: 20px;
+}
+
+.resume6 .head {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  background: #4d4f75;
+  padding: 4px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.resume6 .p3 {
+  color: #7b7b7b;
+  margin-bottom: 5px;
+
+}
+
+.resume6 .fa {
+  color: #151b29;
+}
+
+.resume6 .skills {
+  margin-left: -20px;
+  margin-bottom: 0px;
+}
+
+.resume6 .skills li {
+  padding: 5px;
+}
+
+.resume6 .skills li span {
+  color: #7b7b7b;
+}
+
+.resume6 .p4 {
+  font-size: 14px;
+  color: #7b7b7b;
+}
