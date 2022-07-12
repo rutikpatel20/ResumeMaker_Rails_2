@@ -112,3 +112,7 @@ p a{
 .resumelist-main{
   margin: 2rem;
 }
+
+.resumelist-main .temp3 img{
+  height: 685px;
+}
