@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_07_094546) do
+ActiveRecord::Schema.define(version: 2022_07_12_053229) do
+
+  create_table "award3s", force: :cascade do |t|
+    t.string "award3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_award3s_on_resume3_id"
+  end
 
   create_table "education2s", force: :cascade do |t|
     t.string "degree_title2"
@@ -21,6 +29,17 @@ ActiveRecord::Schema.define(version: 2022_07_07_094546) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume2_id"
     t.index ["resume2_id"], name: "index_education2s_on_resume2_id"
+  end
+
+  create_table "education3s", force: :cascade do |t|
+    t.string "degree_title3"
+    t.string "study_organization_name3"
+    t.string "start_year3"
+    t.string "end_year3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_education3s_on_resume3_id"
   end
 
   create_table "educations", force: :cascade do |t|
@@ -42,6 +61,18 @@ ActiveRecord::Schema.define(version: 2022_07_07_094546) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume2_id"
     t.index ["resume2_id"], name: "index_experience2s_on_resume2_id"
+  end
+
+  create_table "experience3s", force: :cascade do |t|
+    t.string "job_title3"
+    t.string "employer3"
+    t.string "start_date3"
+    t.string "end_date3"
+    t.string "work_description3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_experience3s_on_resume3_id"
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -91,6 +122,14 @@ ActiveRecord::Schema.define(version: 2022_07_07_094546) do
     t.index ["resume2_id"], name: "index_hobby2s_on_resume2_id"
   end
 
+  create_table "knownlang3s", force: :cascade do |t|
+    t.string "knownlang3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_knownlang3s_on_resume3_id"
+  end
+
   create_table "programminglang2s", force: :cascade do |t|
     t.string "programminglang2"
     t.datetime "created_at", precision: 6, null: false
@@ -100,6 +139,18 @@ ActiveRecord::Schema.define(version: 2022_07_07_094546) do
   end
 
   create_table "resume2s", force: :cascade do |t|
+    t.string "name"
+    t.string "profile_pic"
+    t.string "current_role"
+    t.string "profile_summary"
+    t.string "contact_number"
+    t.string "email"
+    t.string "linkedin_username"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "resume3s", force: :cascade do |t|
     t.string "name"
     t.string "profile_pic"
     t.string "current_role"
@@ -144,6 +195,14 @@ ActiveRecord::Schema.define(version: 2022_07_07_094546) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume2_id"
     t.index ["resume2_id"], name: "index_skill2s_on_resume2_id"
+  end
+
+  create_table "skill3s", force: :cascade do |t|
+    t.string "skill3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_skill3s_on_resume3_id"
   end
 
   create_table "users", force: :cascade do |t|
