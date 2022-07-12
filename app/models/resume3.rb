@@ -13,4 +13,6 @@ class Resume3 < ApplicationRecord
 
   has_many :education3s, dependent: :destroy
   accepts_nested_attributes_for :education3s
+
+  mount_uploader :profile_pic, ProfilepictureUploader
 end

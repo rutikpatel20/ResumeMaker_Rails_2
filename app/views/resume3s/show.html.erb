@@ -1,7 +1,9 @@
 <div class="resume3">
   <div class="main">
     <div class="top-section">
-      <img src="image/Rutik_Patel.jpg" class="profile" />
+      <% if @resume3.profile_pic? %>
+        <%= image_tag @resume3.profile_pic.url,alt: "Image not available", class:"card-img img-resposive profile" %>
+      <% end %>
       <p class="p1"><%= @resume3.name %></p>
       <p class="p2"><%= @resume3.current_role %></p>
     </div>
