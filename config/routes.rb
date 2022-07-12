@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :resume2s
   resources :resume3s
   resources :resume4s
+  resources :resume5s
 end
