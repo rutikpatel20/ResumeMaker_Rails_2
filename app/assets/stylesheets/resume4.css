@@ -1,0 +1,103 @@
+.resume4 .clearfix {
+  clear: both;
+}
+
+.resume4 .main {
+  height: 1150px;
+  width: 800px;
+  background-color: white;
+  box-shadow: 5px 7px 15px 5px #b9b6b6;
+  margin: 20px auto;
+
+}
+
+.resume4 .top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #4d4f75;
+  text-align: center;
+  padding: 20px;
+}
+
+.resume4 .profile {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.resume4 .p1 {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.resume4 .p1 span {
+  font-weight: 100;
+  color: #c7c7c7;
+}
+
+.resume4 .p2 {
+  font-size: 20px;
+  color: #c7c7c7;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.resume4 .col-div-4 {
+  width: 35%;
+  float: left;
+
+}
+
+.resume4 .col-div-8 {
+  width: 62%;
+  float: left;
+}
+
+.resume4 .line {
+  border-left: 1px solid #c7c7c7;
+  height: 800px;
+  width: 2%;
+  margin-top: 30px;
+  float: left;
+}
+
+.resume4 .content-box {
+  padding: 20px;
+}
+
+.resume4 .head {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.resume4 .p3 {
+  color: #7b7b7b;
+  margin-bottom: 5px;
+
+}
+
+.resume4 .fa {
+  color: #151b29;
+}
+
+.resume4 .skills {
+  margin-left: -20px;
+  margin-bottom: 0px;
+}
+
+.resume4 .skills li {
+  padding: 5px;
+}
+
+.resume4 .skills li span {
+  color: #7b7b7b;
+}
+
+.resume4 .p4 {
+  font-size: 14px;
+  color: #7b7b7b;
+}
