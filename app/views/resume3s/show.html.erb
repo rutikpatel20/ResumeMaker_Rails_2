@@ -15,24 +15,20 @@
         <br/>
         <p class="head">my skills</p>
         <ul class="skills">
-          <li><span><%= @resume3.skill %></span></li>
-          <li><span><%= @resume3.skill %></span></li>
-          <li><span><%= @resume3.skill %></span></li>
-          <li><span><%= @resume3.skill %></span></li>
-          <li><span><%= @resume3.skill %></span></li>
+          <% @skill3s.each do |skill3| %>
+            <li><span><%= skill3.skill3 %></span></li>
+          <% end %>
         </ul>
         <br/>
         <p class="head">Awards</p>
-        <p class="p3"><%= @resume3.award %></p>
-        <p class="p3"><%= @resume3.award %></p>
-        <p class="p3"><%= @resume3.award %></p>
-        <p class="p3"><%= @resume3.award %></p>
+        <% @award3s.each do |award3| %>
+          <p class="p3"><%= award3.award3 %></p>
+        <% end %>
         <br/>
         <p class="head">Languages</p>
-        <p class="p3"><%= @resume3.known_language %></p>
-        <p class="p3"><%= @resume3.known_language %></p>
-        <p class="p3"><%= @resume3.known_language %></p>
-        <p class="p3"><%= @resume3.known_language %></p>
+        <% @knownlang3s.each do |knownlang3| %>
+          <p class="p3"><%= knownlang3.knownlang3 %></p>
+        <% end %>
       </div>
     </div>
     <div class="line"></div>
@@ -42,18 +38,15 @@
         <p class="p3" style="font-size: 14px;"><%= @resume3.profile_summary %></p>
         <br/>
         <p class="head">EXPERIENCE</p>
-        <p><%= @resume3.experience %> (2018 - NOW)</p>
-        <p class="p-4">WORK SUMMARY GOES HERE Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s</p>
-        <p><%= @resume3.experience %> (2018 - NOW)</p>
-        <p class="p-4">WORK SUMMARY GOES HERE Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s</p>
-        <p><%= @resume3.experience %> (2018 - NOW)</p>
-        <p class="p-4">WORK SUMMARY GOES HERE Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s</p>
+        <% @experience3s.each do |experience3| %>
+          <p><%= experience3.job_title3 %> (<%= experience3.start_date3 %> - <%= experience3.end_date3 %>)</p>
+          <p class="p4"><%= experience3.work_description3 %></p>
+        <% end %>
         <br/>
         <p class="head">Education</p>
-        <p class="p-4" ><%= @resume3.education %> (2009 - 2010)</p>
-        <p class="p-4" ><%= @resume3.education %> (2009 - 2010)</p>
-        <p class="p-4" ><%= @resume3.education %> (2009 - 2010)</p>
-        <p class="p-4" ><%= @resume3.education %> (2009 - 2010)</p>
+        <% @education3s.each do |education3| %>
+          <p class="p4"> <%= education3.degree_title3 %> (<%= education3.start_year3 %> - <%= education3.end_year3 %>) </p>
+        <% end %>
       </div>
     </div>
     <div class="clearfix"></div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_123559) do
+ActiveRecord::Schema.define(version: 2022_07_12_053229) do
 
   create_table "award3s", force: :cascade do |t|
     t.string "award3"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2022_07_08_123559) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume2_id"
     t.index ["resume2_id"], name: "index_education2s_on_resume2_id"
+  end
+
+  create_table "education3s", force: :cascade do |t|
+    t.string "degree_title3"
+    t.string "study_organization_name3"
+    t.string "start_year3"
+    t.string "end_year3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_education3s_on_resume3_id"
   end
 
   create_table "educations", force: :cascade do |t|
@@ -50,6 +61,18 @@ ActiveRecord::Schema.define(version: 2022_07_08_123559) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "resume2_id"
     t.index ["resume2_id"], name: "index_experience2s_on_resume2_id"
+  end
+
+  create_table "experience3s", force: :cascade do |t|
+    t.string "job_title3"
+    t.string "employer3"
+    t.string "start_date3"
+    t.string "end_date3"
+    t.string "work_description3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "resume3_id"
+    t.index ["resume3_id"], name: "index_experience3s_on_resume3_id"
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -135,8 +158,6 @@ ActiveRecord::Schema.define(version: 2022_07_08_123559) do
     t.string "contact_number"
     t.string "email"
     t.string "linkedin_username"
-    t.string "experience"
-    t.string "education"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

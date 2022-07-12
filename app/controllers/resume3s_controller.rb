@@ -10,6 +10,8 @@ class Resume3sController < ApplicationController
     @skill3s = @resume3.skill3s.build
     @award3s = @resume3.award3s.build
     @knownlang3s = @resume3.knownlang3s.build
+    @experience3s = @resume3.experience3s.build
+    @education3s = @resume3.education3s.build
   end
 
   def create
@@ -30,6 +32,8 @@ class Resume3sController < ApplicationController
     @skill3s = @resume3.skill3s
     @award3s = @resume3.award3s
     @knownlang3s = @resume3.knownlang3s
+    @education3s = @resume3.education3s
+    @experience3s = @resume3.experience3s
   end
 
   def update
@@ -59,6 +63,6 @@ class Resume3sController < ApplicationController
   end
 
   def resume3_params
-    params.require(:resume3).permit(:name, :profile_pic, :current_role, :profile_summary, :contact_number, :email, :linkedin_username, :experience, :education, skill3s_attributes: [:id, :skill3], award3s_attributes: [:id, :award3], knownlang3s_attributes: [:id, :knownlang3])
+    params.require(:resume3).permit(:name, :profile_pic, :current_role, :profile_summary, :contact_number, :email, :linkedin_username, skill3s_attributes: [:id, :skill3], award3s_attributes: [:id, :award3], knownlang3s_attributes: [:id, :knownlang3], education3s_attributes: [:id, :degree_title3, :study_organization_name3, :start_year3, :end_year3], experience3s_attributes: [:id, :job_title3, :employer3, :start_date3, :end_date3, :work_description3])
   end
 end

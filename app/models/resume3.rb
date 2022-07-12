@@ -7,4 +7,10 @@ class Resume3 < ApplicationRecord
 
   has_many :knownlang3s, dependent: :destroy
   accepts_nested_attributes_for :knownlang3s
+
+  has_many :experience3s, dependent: :destroy
+  accepts_nested_attributes_for :experience3s
+
+  has_many :education3s, dependent: :destroy
+  accepts_nested_attributes_for :education3s
 end
