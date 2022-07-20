@@ -3,6 +3,10 @@
   transition: .35s ease
 }
 
+html{
+  background-color: #f2ffe89c;
+}
+
 .block-relative {
   display: block;
   position: relative;
@@ -29,6 +33,13 @@ body {
 
 .navbar img{
   width: 4rem;
+}
+
+.navbar .navbar-nav .nav-item a:hover{
+  color: #fff900;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #fff900;
 }
 
 body:before {
@@ -102,4 +113,8 @@ p a{
   width: 205px;
   height: 205px;
   object-fit: cover;
+}
+
+.footer a:hover{
+  color: red !important;
 }
