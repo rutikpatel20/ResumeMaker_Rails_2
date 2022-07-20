@@ -1,5 +1,6 @@
 class Resume6sController < ApplicationController
   before_action :set_resume6_params, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @resume6s = Resume6.all
