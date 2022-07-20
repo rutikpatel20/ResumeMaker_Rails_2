@@ -94,3 +94,12 @@ p a{
   align-items: center;
   justify-content: center;
 }
+
+/* Testinomals CSS */
+#testinomals img{
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 205px;
+  height: 205px;
+  object-fit: cover;
+}
