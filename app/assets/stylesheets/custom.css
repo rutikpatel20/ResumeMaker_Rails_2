@@ -82,3 +82,10 @@ p a{
 .resumelist-main .temp3 img{
   height: 685px;
 }
+
+.steps-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
