@@ -14,8 +14,4 @@ Rails.application.routes.draw do
   get "resumelist", to: "static_pages#resumelist"
 
   resources :resume2s
-  resources :resume3s
-  resources :resume4s
-  resources :resume5s
-  resources :resume6s
 end
