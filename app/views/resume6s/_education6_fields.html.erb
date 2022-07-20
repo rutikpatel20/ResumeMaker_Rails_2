@@ -1,0 +1,18 @@
+ <!-- Nested Form of education for f -->
+<div class="nested-fields">
+  <div class="mb-3 ms-4">
+    <%= f.label :degree_title6, "Degree :" %>
+    <%= f.text_field :degree_title6, placeholder: "Enter Your Degree",class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :study_organization_name6, "College :" %>
+    <%= f.text_field :study_organization_name6, placeholder: "Enter Your Study Organization Name",class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :start_year6, "Start-Year :" %>
+    <%= f.month_field :start_year6,  :value => Time.now.strftime("%Y-%m"), class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :end_year6, "End-Year :" %>
+    <%= f.month_field :end_year6,  :value => Time.now.strftime("%Y-%m"), class:"mb-2 form-control" %>
+    <br>
+    <%= link_to_remove_association fa_icon("trash"), f, class:"btn-danger border-0 rounded-pill shadow px-3 py-2 mx-2 text-decoration-none", style:"height:100%;" %>
+  </div>
+</div>

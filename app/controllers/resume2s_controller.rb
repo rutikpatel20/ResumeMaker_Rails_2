@@ -1,5 +1,6 @@
 class Resume2sController < ApplicationController
   before_action :set_resume2_params, only: [:edit, :show, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @resume2s = Resume2.all

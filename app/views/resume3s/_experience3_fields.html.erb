@@ -1,0 +1,21 @@
+ <!-- Nested Form of Experience for f -->
+<div class="nested-fields">
+  <div class="mb-3 ms-4">
+    <%= f.label :job_title3, "Job Title :" %>
+    <%= f.text_field :job_title3 ,placeholder: "Enter Your Job Title", class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :employer3, "Employer :" %>
+    <%= f.text_field :employer3 ,placeholder: "Enter Your Employer", class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :start_date3, "Start-Date :" %>
+    <%= f.month_field :start_date3,  :value => Time.now.strftime("%Y-%m"), class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :end_date3, "End-Date :" %>
+    <%= f.month_field :end_date3,  :value => Time.now.strftime("%Y-%m"), class:"mb-2 form-control" %>
+    <br>
+    <%= f.label :work_description3, "Job Description :" %>
+    <%= f.text_area :work_description3 ,placeholder: "Enter Your Job Description", class:"mb-2 form-control" %>
+    <br>
+    <%= link_to_remove_association fa_icon("trash"), f, class:"btn-danger border-0 rounded-pill shadow px-3 py-2 mx-2 text-decoration-none", style:"height:100%;" %>
+  </div>
+</div>

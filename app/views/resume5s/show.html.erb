@@ -1,0 +1,55 @@
+<div class="resume5">
+  <div class="main">
+    <div class="top-section">
+      <div class="name-designation">
+        <p class="p1"><%= @resume5.name %></p>
+        <p class="p2"><%= @resume5.current_role %></p>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-div-4">
+      <div class="content-box" style="padding-left: 40px;">
+        <p class="head">Contact</p>
+        <p class="p3"><i class="fa fa-phone text-dark" aria-hidden="true"></i> &nbsp;&nbsp;<%= @resume5.contact_number %></p>
+        <p class="p3"><i class="fa fa-envelope text-dark" aria-hidden="true"></i> &nbsp;&nbsp;<%= @resume5.email %></p>
+        <p class="p3"><i class="fab fa-linkedin text-dark" aria-hidden="true"></i> &nbsp;&nbsp;<%= @resume5.linkedin_username %></p>
+        <br/>
+        <p class="head">my skills</p>
+        <ul class="skills">
+          <% @skill5s.each do |skill5| %>
+            <li><span><%= skill5.skill5 %></span></li>
+          <% end %>
+        </ul>
+        <br/>
+        <p class="head">Awards</p>
+        <% @award5s.each do |award5| %>
+          <p class="p3"><%= award5.award5 %></p>
+        <% end %>
+        <br/>
+        <p class="head">Languages</p>
+        <% @knownlang5s.each do |knownlang5| %>
+          <p class="p3"><%= knownlang5.knownlang5 %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="col-div-8">
+      <div class="content-box">
+        <p class="head">profile</p>
+        <p class="p3" style="font-size: 14px;"><%= @resume5.profile_summary %></p>
+        <br/>
+        <p class="head">EXPERIENCE</p>
+        <% @experience5s.each do |experience5| %>
+          <p><%= experience5.job_title5 %> (<%= experience5.start_date5 %> - <%= experience5.end_date5 %>)</p>
+          <p class="p4"><%= experience5.work_description5 %></p>
+        <% end %>
+        <br/>
+        <p class="head">Education</p>
+        <% @education5s.each do |education5| %>
+          <p class="p4"> <%= education5.degree_title5 %> (<%= education5.start_year5 %> - <%= education5.end_year5 %>) </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="resume3">
+  <div class="main">
+    <div class="top-section">
+      <% if @resume3.profile_pic? %>
+        <%= image_tag @resume3.profile_pic.url,alt: "Image not available", class:"card-img img-resposive profile" %>
+      <% end %>
+      <p class="p1"><%= @resume3.name %></p>
+      <p class="p2"><%= @resume3.current_role %></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-div-4">
+      <div class="content-box" style="padding-left: 40px;">
+        <p class="head">Contact</p>
+        <p class="p3"><i class="fa fa-phone text-dark" aria-hidden="true"></i> &nbsp;&nbsp;<%= @resume3.contact_number %></p>
+        <p class="p3"><i class="fa fa-envelope text-dark" aria-hidden="true"></i> &nbsp;&nbsp;<%= @resume3.email %></p>
+        <p class="p3"><i class="fab fa-linkedin text-dark" aria-hidden="true"></i> &nbsp;&nbsp;<%= @resume3.linkedin_username %></p>
+        <br/>
+        <p class="head">my skills</p>
+        <ul class="skills">
+          <% @skill3s.each do |skill3| %>
+            <li><span><%= skill3.skill3 %></span></li>
+          <% end %>
+        </ul>
+        <br/>
+        <p class="head">Awards</p>
+        <% @award3s.each do |award3| %>
+          <p class="p3"><%= award3.award3 %></p>
+        <% end %>
+        <br/>
+        <p class="head">Languages</p>
+        <% @knownlang3s.each do |knownlang3| %>
+          <p class="p3"><%= knownlang3.knownlang3 %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="col-div-8">
+      <div class="content-box">
+        <p class="head">profile</p>
+        <p class="p3" style="font-size: 14px;"><%= @resume3.profile_summary %></p>
+        <br/>
+        <p class="head">EXPERIENCE</p>
+        <% @experience3s.each do |experience3| %>
+          <p><%= experience3.job_title3 %> (<%= experience3.start_date3 %> - <%= experience3.end_date3 %>)</p>
+          <p class="p4"><%= experience3.work_description3 %></p>
+        <% end %>
+        <br/>
+        <p class="head">Education</p>
+        <% @education3s.each do |education3| %>
+          <p class="p4"> <%= education3.degree_title3 %> (<%= education3.start_year3 %> - <%= education3.end_year3 %>) </p>
+        <% end %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
