@@ -60,6 +60,11 @@ body:before {
   border-color: orange;
 }
 
+#steps .hero-image{
+  background-image: linear-gradient(rgb(0 0 0 / 30%),rgb(0 0 0 / 20%)), url(https://source.unsplash.com/random/?design);
+  color: white !important;
+}
+
 /* Change the look of links under p tag */
 p a{
   text-decoration: none;
