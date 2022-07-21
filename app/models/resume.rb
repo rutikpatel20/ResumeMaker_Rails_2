@@ -16,7 +16,7 @@ class Resume < ApplicationRecord
   validates :social_media_3, presence: true
   validates :profile_summary, presence: true, length: { minimum: 30 }
 
-  # Validation for Nested Form Field
+  # Validation for Nested Form Field are added in their models
 
   mount_uploader :profile_pic, ProfilepictureUploader
 
