@@ -21,6 +21,8 @@ class Resume2sController < ApplicationController
       flash[:errors] = "Resume2 Build Successfully"
       redirect_to resume2s_path
     else
+      binding.pry
+
       flash[:errors] = @resume2.errors.full_messages
       redirect_to new_resume2_path
     end
