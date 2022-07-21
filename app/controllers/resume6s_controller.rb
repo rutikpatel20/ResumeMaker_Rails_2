@@ -21,6 +21,8 @@ class Resume6sController < ApplicationController
       flash[:errors] = "Resume Build Successfully"
       redirect_to resume6s_path
     else
+      binding.pry
+
       flash[:errors] = @resume6.errors.full_messages
       redirect_to new_resume6_path
     end
