@@ -19,7 +19,7 @@ class Resume2sController < ApplicationController
     @resume2 = Resume2.create(resume2_params)
     if @resume2.save
       flash[:errors] = "Resume2 Build Successfully"
-      redirect_to resume2s_path
+      redirect_to resume2_path(@resume2)
     else
       binding.pry
 
