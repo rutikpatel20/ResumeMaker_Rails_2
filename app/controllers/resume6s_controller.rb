@@ -19,7 +19,7 @@ class Resume6sController < ApplicationController
     @resume6 = Resume6.create(resume6_params)
     if @resume6.save
       flash[:errors] = "Resume Build Successfully"
-      redirect_to resume6s_path
+      redirect_to resume6_path(@resume6)
     else
       flash[:errors] = @resume6.errors.full_messages
       redirect_to new_resume6_path
