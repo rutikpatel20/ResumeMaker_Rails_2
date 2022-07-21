@@ -1,4 +1,5 @@
 class ResumesController < ApplicationController
+  # skip_before_action :verify_authenticity_token
   before_action :set_resume_params, only: [:edit, :show, :update, :destroy]
   before_action :authenticate_user!
 
@@ -20,6 +21,7 @@ class ResumesController < ApplicationController
       flash[:errors] = "Resume Build Successfully"
       redirect_to resume_path(@resume)
     else
+      # binding.pry
       flash[:errors] = @resume.errors.full_messages
       redirect_to new_resume_path
     end
