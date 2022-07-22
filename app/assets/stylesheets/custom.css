@@ -83,6 +83,10 @@ p a{
 }
 
 /* Pricing Card CSS */
+.pricing-card{
+  margin: 11rem auto;
+}
+
 .checkout-card:hover{
   transform: scale(1.1);
 }
