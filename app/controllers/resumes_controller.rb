@@ -50,7 +50,7 @@ class ResumesController < ApplicationController
   def destroy
     if @resume.delete
       flash[:errors] = "Resume Deleted Successfully"
-      redirect_to root_path(@resume)
+      redirect_to resumes_path
     else
       flash[:errors] = @resume.errors.full_messages
       redirect_to destroy_resume_path

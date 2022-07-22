@@ -1,3 +1,31 @@
-<div class="d-flex">
-  <%= button_to "Create Resume", new_resume_path, method: :get ,class:"btn-warning border-0 rounded-pill shadow p-3 m-3" %>
+<div class="set-center flex-column bg-light">
+  <h1> Your Resumes </h1>
+  <!--Error Message-->
+  <% if flash[:errors] %>
+    <% flash.each do |name,message| %>
+      <p class="text-danger"><%= message %></p>
+    <% end %>
+  <% end %>
+  <p class="text-success"><%= notice %></p>
+  <!-- User Table -->
+  <div class="container">
+    <table class="table table-info table-striped">
+      <ol class="fs-2">
+        <thead class="table-secondary">
+          <td class="text-center"> Name </td>
+          <td colspan=3 class="text-center"> Action </td>
+        </thead>
+        <% @resumes.each do |resume| %>
+          <tr>
+            <td class="text-center"> <%= link_to resume.slug, resume_path(resume), class:"text-decoration-none" %> </td>
+            <td class="text-center"><%= button_to "Show",resume_path(resume),method: :get, class:"btn-success border-0 rounded-pill shadow px-3 py-2" %></td>
+            <td class="text-center"><%= button_to "Delete",resume_path(resume),method: :delete, class:"btn-danger border-0 rounded-pill shadow px-3 py-2 text-decoration-none" %></td>
+          </tr>
+        <% end %>
+      </ol>
+    </table>
+  </div>
+  <div class="d-flex">
+    <%= button_to "Create Resume", new_resume_path, method: :get ,class:"btn-warning border-0 rounded-pill shadow p-3 m-3" %>
+  </div>
 </div>
