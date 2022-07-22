@@ -62,7 +62,7 @@ class Resume2sController < ApplicationController
   private
 
   def set_resume2_params
-    @resume2 = Resume2.find(params[:id])
+    @resume2 = Resume2.friendly.find(params[:id])
   end
 
   def resume2_params

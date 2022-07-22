@@ -1,4 +1,9 @@
 class Resume2 < ApplicationRecord
+
+  # For Friendly ID
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   validates :name, presence: true
   validates :profile_pic, presence: true
   validates :current_role, presence: true

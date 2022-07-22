@@ -1,4 +1,9 @@
 class Resume5 < ApplicationRecord
+
+  # For Friendly ID
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   validates :name, presence: true
   validates :current_role, presence: true
   validates :profile_summary, presence: true, length: { minimum: 500 }

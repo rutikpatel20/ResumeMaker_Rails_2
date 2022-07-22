@@ -60,7 +60,7 @@ class Resume5sController < ApplicationController
   private
 
   def set_resume5_params
-    @resume5 = Resume5.find(params[:id])
+    @resume5 = Resume5.friendly.find(params[:id])
   end
 
   def resume5_params

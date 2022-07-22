@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_12_081055) do
+ActiveRecord::Schema.define(version: 2022_07_22_070548) do
 
   create_table "award3s", force: :cascade do |t|
     t.string "award3"
@@ -265,6 +265,8 @@ ActiveRecord::Schema.define(version: 2022_07_12_081055) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_resume2s_on_slug", unique: true
   end
 
   create_table "resume3s", force: :cascade do |t|
@@ -277,6 +279,8 @@ ActiveRecord::Schema.define(version: 2022_07_12_081055) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_resume3s_on_slug", unique: true
   end
 
   create_table "resume4s", force: :cascade do |t|
@@ -289,6 +293,8 @@ ActiveRecord::Schema.define(version: 2022_07_12_081055) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_resume4s_on_slug", unique: true
   end
 
   create_table "resume5s", force: :cascade do |t|
@@ -300,6 +306,8 @@ ActiveRecord::Schema.define(version: 2022_07_12_081055) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_resume5s_on_slug", unique: true
   end
 
   create_table "resume6s", force: :cascade do |t|
@@ -311,6 +319,8 @@ ActiveRecord::Schema.define(version: 2022_07_12_081055) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_resume6s_on_slug", unique: true
   end
 
   create_table "resumes", force: :cascade do |t|
