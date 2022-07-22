@@ -3,10 +3,6 @@
   transition: .35s ease
 }
 
-html{
-  background-color: #f2ffe89c;
-}
-
 .block-relative {
   display: block;
   position: relative;
@@ -83,6 +79,10 @@ p a{
 }
 
 /* Pricing Card CSS */
+.pricing-card{
+  margin: 11rem auto;
+}
+
 .checkout-card:hover{
   transform: scale(1.1);
 }
@@ -118,4 +118,13 @@ p a{
 
 .footer a:hover{
   color: red !important;
+}
+
+/* Resume All Form Styling */
+.flex-column{
+  background: #cbc8c863;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 14px;
+  box-shadow: 1px 1px 8px 2px #c3c3c3;
 }
