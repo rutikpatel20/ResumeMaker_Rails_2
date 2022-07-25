@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   post "checkout/create", to: "checkout#create", as: "checkout_create"
   post "billing_portal/create", to: "billing_portal#create", as: "billing_portal_create"
   get "profile", to: "static_pages#profile"
+  get "resumelist", to: "static_pages#resumelist"
 
   resources :resume2s
+  resources :resume3s
+  resources :resume4s
+  resources :resume5s
+  resources :resume6s
 end

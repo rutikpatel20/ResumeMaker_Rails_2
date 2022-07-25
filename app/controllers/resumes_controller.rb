@@ -1,4 +1,5 @@
 class ResumesController < ApplicationController
+  # skip_before_action :verify_authenticity_token
   before_action :set_resume_params, only: [:edit, :show, :update, :destroy]
   before_action :authenticate_user!
 
@@ -17,9 +18,10 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.create(resume_params)
     if @resume.save
-      flash[:errors] = "Resume Build Successfully"
+      flash[:notice] = "Resume Build Successfully"
       redirect_to resume_path(@resume)
     else
+      # binding.pry
       flash[:errors] = @resume.errors.full_messages
       redirect_to new_resume_path
     end
@@ -37,7 +39,7 @@ class ResumesController < ApplicationController
 
   def update
     if @resume.update(resume_params)
-      flash[:errors] = "Resume Updated Successfully"
+      flash[:notice] = "Resume Updated Successfully"
       redirect_to resume_path(@resume)
     else
       flash[:errors] = @resume.errors.full_messages
@@ -47,7 +49,7 @@ class ResumesController < ApplicationController
 
   def destroy
     if @resume.delete
-      flash[:errors] = "Resume Deleted Successfully"
+      flash[:notice] = "Resume Deleted Successfully"
       redirect_to root_path(@resume)
     else
       flash[:errors] = @resume.errors.full_messages

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <a href="/" class="me-2"><%= image_tag("R_logo.png") %></a>
@@ -13,16 +13,19 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pricing">Pricing</a>
+          <a class="nav-link active" href="/pricing">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Samples</a>
+          <a class="nav-link active" href="#steps">How it Works?</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link active" href="#testinomals">Testinomals</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link active" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ResumeList", resumelist_path, class:"nav-link active active" %>
         </li>
       </ul>
       <div class="d-flex align-items-center">

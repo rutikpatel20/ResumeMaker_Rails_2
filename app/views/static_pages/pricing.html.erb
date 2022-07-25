@@ -1,5 +1,5 @@
-<h2 class="text-center my-5"> ResumeMaker Subscription Prices</h2>
 <div class="pricing-card container">
+  <h2 class="text-center my-5"> ResumeMaker Subscription Prices</h2>
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
     <% @pricing = Stripe::Price.list(lookup_keys: ["resume_2Temp_300", "resume_4Temp_400", "resume_6Temp_600"], expand: ["data.product"]) %>
     <% @pricing.each do |price| %>

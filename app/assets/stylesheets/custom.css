@@ -19,6 +19,7 @@
 }
 
 body {
+  padding-top: 65px;
   font-family: 'Open Sans';
   font-size: 18px;
   letter-spacing: 0;
@@ -27,41 +28,15 @@ body {
   background-size: cover
 }
 
-/* Animated Background Styling Start Here */
-
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
-/* Animated Background Styling End Here */
-
 .navbar img{
   width: 4rem;
+}
+
+.navbar .navbar-nav .nav-item a:hover{
+  color: #fff900;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #fff900;
 }
 
 body:before {
@@ -84,13 +59,18 @@ body:before {
 }
 
 #home .slogan-line{  
-  text-shadow: 1px 1px 3px black;
   letter-spacing: 2px;
 }
 
-#home .title{
-  letter-spacing: 9px;
-  text-shadow: 2px 2px 2px black;
+#home .btn:hover{  
+  background-color: orange;
+  color: black;
+  border-color: orange;
+}
+
+#steps .hero-image{
+  background-image: linear-gradient(rgb(0 0 0 / 30%),rgb(0 0 0 / 20%)), url(https://source.unsplash.com/random/?design);
+  color: white !important;
 }
 
 /* Change the look of links under p tag */
@@ -99,6 +79,10 @@ p a{
 }
 
 /* Pricing Card CSS */
+.pricing-card{
+  margin: 11rem auto;
+}
+
 .checkout-card:hover{
   transform: scale(1.1);
 }
@@ -106,4 +90,41 @@ p a{
 /* Profile Card CSS */
 .profile-image img{
   width: 50%;
+}
+
+/* ResumeList Style */
+.resumelist-main{
+  margin: 2rem;
+}
+.resumelist-main .temp3 img{
+  height: 685px;
+}
+
+.steps-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Testinomals CSS */
+#testinomals img{
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 205px;
+  height: 205px;
+  object-fit: cover;
+}
+
+.footer a:hover{
+  color: red !important;
+}
+
+/* Resume All Form Styling */
+.flex-column{
+  background: #cbc8c863;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 14px;
+  box-shadow: 1px 1px 8px 2px #c3c3c3;
 }
