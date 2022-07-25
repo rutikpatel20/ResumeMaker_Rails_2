@@ -18,7 +18,7 @@ class Resume6sController < ApplicationController
   def create
     @resume6 = Resume6.create(resume6_params)
     if @resume6.save
-      flash[:errors] = "Resume Build Successfully"
+      flash[:notice] = "Resume Build Successfully"
       redirect_to resume6_path(@resume6)
     else
       flash[:errors] = @resume6.errors.full_messages
@@ -39,7 +39,7 @@ class Resume6sController < ApplicationController
 
   def update
     if @resume6.update(resume6_params)
-      flash[:errors] = "Resume Updated Successfully"
+      flash[:notice] = "Resume Updated Successfully"
       redirect_to resume6_path(@resume6)
     else
       flash[:errors] = @resume6.errors.full_messages
@@ -49,7 +49,7 @@ class Resume6sController < ApplicationController
 
   def destroy
     if @resume6.delete
-      flash[:errors] = "Resume Deleted Successfully"
+      flash[:notice] = "Resume Deleted Successfully"
       redirect_to root_path(@resume6)
     else
       flash[:errors] = @resume6.errors.full_messages
