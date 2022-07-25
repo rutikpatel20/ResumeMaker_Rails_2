@@ -279,8 +279,6 @@ ActiveRecord::Schema.define(version: 2022_07_22_070548) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.index ["slug"], name: "index_resume3s_on_slug", unique: true
   end
 
   create_table "resume4s", force: :cascade do |t|
@@ -293,8 +291,6 @@ ActiveRecord::Schema.define(version: 2022_07_22_070548) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.index ["slug"], name: "index_resume4s_on_slug", unique: true
   end
 
   create_table "resume5s", force: :cascade do |t|
@@ -306,8 +302,6 @@ ActiveRecord::Schema.define(version: 2022_07_22_070548) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.index ["slug"], name: "index_resume5s_on_slug", unique: true
   end
 
   create_table "resume6s", force: :cascade do |t|
@@ -319,8 +313,6 @@ ActiveRecord::Schema.define(version: 2022_07_22_070548) do
     t.string "linkedin_username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.index ["slug"], name: "index_resume6s_on_slug", unique: true
   end
 
   create_table "resumes", force: :cascade do |t|
