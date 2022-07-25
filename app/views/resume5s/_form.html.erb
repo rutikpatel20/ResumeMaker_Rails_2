@@ -1,6 +1,11 @@
 <!-- Resume5 Form -->
 <div class="container form-container">
   <div class="flex-column">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p class="alert alert-danger"><%= error %></p>
+      <% end %>
+    <% end %>
     <!-- Form Started Here -->
     <%= form_for @resume5 do |f| %>
       <div class="form-group row">

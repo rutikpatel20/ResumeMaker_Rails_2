@@ -18,7 +18,7 @@ class Resume2sController < ApplicationController
   def create
     @resume2 = Resume2.create(resume2_params)
     if @resume2.save
-      flash[:errors] = "Resume2 Build Successfully"
+      flash[:notice] = "Resume Build Successfully"
       redirect_to resume2s_path
     else
       flash[:errors] = @resume2.errors.full_messages
@@ -39,7 +39,7 @@ class Resume2sController < ApplicationController
 
   def update
     if @resume2.update(resume2_params)
-      flash[:errors] = "Resume2 Updated Successfully"
+      flash[:notice] = "Resume Updated Successfully"
       redirect_to resume2_path(@resume2)
     else
       flash[:errors] = @resume2.errors.full_messages
@@ -49,7 +49,7 @@ class Resume2sController < ApplicationController
 
   def destroy
     if @resume2.delete
-      flash[:errors] = "esume2 Deleted Successfully"
+      flash[:notice] = "Resume Deleted Successfully"
       redirect_to root_path(@resume2)
     else
       flash[:errors] = @resume2.errors.full_messages
